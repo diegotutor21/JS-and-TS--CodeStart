@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="../assets/images/diego/javascript.png" type="image/png" />
+    <title>Front-End</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Forum", serif;
+      box-sizing: border-box;
+      line-height: 1.5;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+    }
+
+    nav {
+      background-color: #2f5554;
+      width: 100%;
+      height: 85px;
+      display: flex;
+    }
+    nav #a1 {
+      margin-left: 1180px;
+      font-size: 25px;
+      margin-right: 10px;
+      
+    }
+
+    body {
+      background-color: #d3e1e2;
+    }
+
+    .navbar {
+      background-color: #2f5554; /* Cambia el color de fondo del navbar */
+      color: #fae5d3;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 20px;
+      color: #fae5d3; /* Cambia el color del texto de los botones */
+    }
+    .nav-item #a1 {
+      margin-right: 30px;
+      font-size: 25px;
+    }
+
+    main {
+      padding: 30px;
+      background-color: #f4fefd;
+      width: 80%; /* Tamaño para PC */
+      margin: 0 auto; /* Centrar el contenido */
+    }
+
+    h1 {
+      color: rgb(255, 238, 0); /* Color azul oscuro de TypeScript */
+      font-size: 36px; /* Tamaño de fuente grande */
+      font-weight: bold; /* Texto en negrita */
+      text-transform: uppercase; /* Texto en mayúsculas */
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-align: center;
+      text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+        -1px 1px 0 #000, 1px 1px 0 #000;
+      -webkit-text-stroke: 1px black;
+    }
+
+    .contenido {
+      columns: 200px 2;
+      column-gap: 30px;
+      padding: 20px;
+    }
+
+    .title {
+      column-span: all;
+      display: block;
+    }
+
+    .img {
+      display: block;
+      margin: 0 auto; /* Centrar la imagen horizontalmente */
+      max-width: 50%; /* Ajustar la imagen al ancho del contenedor */
+      transition: transform 0.5s ease; /* Agregamos una animación de transición */
+    }
+
+    .img:hover {
+      transform: scale(1.04);
+    }
+    /*Termina el Main*/
+
+    @media screen and (max-width: 900px) {
+      nav #a1 {
+        margin-top: -60px;
+        font-size: 15px;
+        margin-left: 700px;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      nav #a1 {
+        margin-left: 700px;
+        background-color: #335356;
+        width: 550px;
+      }
+    }
+    .pie-pagina {
+      width: 100%;
+      background-color: #2f5554;
+    }
+    .pie-pagina .grupo-1 {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
+      padding: 45px 0px;
+    }
+    .pie-pagina .grupo-1 .box figure {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pie-pagina .grupo-1 .box figure img {
+      width: 280px;
+    }
+    .pie-pagina .grupo-1 .box h2 {
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    .pie-pagina .grupo-1 .box p {
+      color: #efefef;
+      margin-bottom: 10px;
+    }
+    .pie-pagina .grupo-1 .red-social a {
+      display: inline-block;
+      text-decoration: none;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      color: #fff;
+      margin-right: 10px;
+      background-color: #0d2033;
+      text-align: center;
+      transition: all 300ms ease;
+    }
+    .pie-pagina .grupo-1 .red-social a:hover {
+      color: aqua;
+    }
+    .pie-pagina .grupo-2 {
+      background-color: #0a1a2a;
+      padding: 15px 10px;
+      text-align: center;
+      color: #fff;
+    }
+    .pie-pagina .grupo-2 small {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 800px) {
+      nav #a1 {
+        margin-left: 300px;
+        background-color: #335356;
+        width: 550px;
+        font-size: 24px;
+        
+      }
+      main {
+        padding: 0;
+        background-color: #f4fefd;
+        width: 100%; /* Tamaño para PC */
+      }
+
+      .img {
+        max-width: 50%;
+      }
+      .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+      }
+      .img-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .img-container img {
+        max-width: 50%;
+        height: auto;
+      }
+    }
+    /* Estilos para iconos de redes sociales */
+  </style>
+  <body>
+    <header>
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+        <!-- Logotipo de HTML -->
+        <img class="imglogo" src="../assets/images/diego/logocode.png" alt="" width="150" height="60" class="d-inline-block align-top" />
+
+        <!-- Botones de navegación -->
+
+        <a id="a1" class="nav-link" href="/indexnico.html">Inicio</a>
+
+
+      </nav>
+    </header>
+    <main>
+      <h1 class="title">JavaScript, el lenguaje de la Web</h1>
+      <div class="contenido">
+        JavaScript es un lenguaje de programación fundamental en el desarrollo
+        web moderno que se utiliza en el lado del cliente (front-end) para
+        agregar interactividad y dinamismo a las páginas web. En este informe,
+        exploraremos detalladamente los aspectos esenciales de JavaScript en el
+        contexto del desarrollo front-end, desde su definición y características
+        hasta su aplicación práctica, frameworks populares y tendencias futuras.
+      </div>
+      <img src="../assets/images/diego//js.png" class="img" />
+      <div class="contenido">
+        <h2 class="title"><b>Contexto</b></h2>
+        JavaScript, comúnmente abreviado como JS, es un lenguaje de programación
+        interpretado que se ejecuta directamente en los navegadores web de los
+        usuarios. Fue desarrollado por Brendan Eich mientras trabajaba en
+        Netscape Communications a principios de la década de 1990 con el
+        objetivo de proporcionar a los navegadores web la capacidad de ejecutar
+        código en el lado del cliente. Esta innovación permitió la interacción
+        en tiempo real en las páginas web, lo que revolucionó la forma en que
+        los usuarios interactúan con la información en línea. <br />
+        <img src="../assets/images/diego/creador.png" class="img" />
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Características claves</b></h2>
+        <br />
+        <ul>
+          <li>
+            <b>Interactividad:</b> JavaScript permite que las páginas web
+            respondan a las acciones del usuario de manera dinámica. Puedes
+            crear formularios interactivos, botones que realizan acciones y
+            validar datos en tiempo real sin necesidad de recargar la página.
+          </li>
+          <br />
+          <li>
+            <b>Manipulación del DOM:</b> El Document Object Model (DOM)
+            representa la estructura de una página web. JavaScript facilita la
+            manipulación y modificación del DOM, lo que significa que puedes
+            cambiar el contenido y la apariencia de una página web sin tener que
+            cargar una nueva página.
+          </li>
+          <br />
+          <li>
+            <b>Comunicación Asíncrona:</b> JavaScript permite realizar
+            solicitudes asíncronas a servidores web, lo que es fundamental para
+            cargar datos y contenido de manera eficiente sin interrumpir la
+            experiencia del usuario. Esto se logra a través de XMLHttpRequest y
+            la API Fetch.
+          </li>
+          <br />
+          <li>
+            <b>Bibliotecas y Frameworks:</b> JavaScript permite realizar
+            solicitudes asíncronas a servidores web, lo que es fundamental para
+            cargar datos y contenido de manera eficiente sin interrumpir la
+            experiencia del usuario. Esto se logra a través de XMLHttpRequest y
+            la API Fetch.
+          </li>
+        </ul>
+      </div>
+      <img src="../assets/images/diego/contenido.png" class="img" />
+      <div class="contenido">
+        <h2 class="title"><b>Sintaxis Básica</b></h2>
+        <p>
+          La sintaxis de JavaScript se compone de reglas y estructuras que
+          gobiernan cómo se escriben los programas en el lenguaje. Algunos
+          conceptos básicos incluyen:
+        </p>
+        <ul>
+          <li>
+            <b>Variables:</b> Puedes declarar variables utilizando palabras
+            clave como <b>var</b>, <b>let</b>, y <b>const</b> para almacenar
+            datos.
+            <br />
+            <code>
+              <br />
+              <b>// Declaración de variables</b>
+              <br />
+              <b>var</b> numero = 10;
+              <br />
+              <b>let</b> nombre = "Juan";
+              <br />
+              <b>const</b> pi = 3.1416; <br /><br />
+
+              <b>// Uso de variables</b>
+              <br />
+              console.log(numero); // Imprime 10
+              <br />
+              console.log(nombre); // Imprime "Juan"
+              <br />
+              console.log(pi); // Imprime 3.1416
+            </code>
+          </li>
+          <br />
+          <li>
+            <b>Tipos de datos:</b> JavaScript admite tipos de datos como
+            números, cadenas, booleanos, objetos y funciones.
+            <br />
+            <code>
+              <br />
+              <b>// Números</b>
+              <br />
+              <b>var</b> edad = 25; <br /><br />
+
+              <b>// Cadenas de texto</b>
+              <br />
+              <b>var</b> nombre = "María"; <br /><br />
+
+              <b>// Booleanos</b>
+              <br />
+              <b>var</b> esMayor = true; <br /><br />
+
+              <b>// Objetos</b>
+              <br />
+              <b>var</b> persona = { nombre: "Juan", edad: 30 }; <br /><br />
+
+              <b>// Funciones</b>
+              <br />
+              <b>function</b> saludar() { console.log("¡Hola!"); }
+            </code>
+          </li>
+          <br />
+          <li>
+            <b>Operadores:</b> Los operadores permiten realizar cálculos y
+            operaciones en variables, como la suma (<b>+</b>), resta (<b>-</b>),
+            multiplicación (<b>*</b>), división (<b>/</b>), entre otros.
+            <br />
+            <code>
+              <br />
+              <b>var</b> a = 5;
+              <br />
+              <b>var</b> b = 3; <br /><br />
+
+              <b>var</b> suma = a + b; // Suma
+              <br />
+              <b>var</b> resta = a - b; // Resta
+              <br />
+              <b>var</b> multiplicacion = a * b; // Multiplicación
+              <br />
+              <b>var</b> division = a / b; // División
+            </code>
+          </li>
+          <br />
+          <li>
+            <b>Estructuras de control:</b> Utiliza estructuras como <b>if</b>,
+            <b>else</b>, <b>while</b>, <b>for</b>, y <b>switch</b> para
+            controlar el flujo de ejecución de tu programa.
+            <br />
+            <code>
+              <br />
+              <b>// Estructura 'if' para tomar decisiones</b>
+              <br />
+              <b>var</b> edad = 18;
+              <br />
+              <b>if</b> (edad >= 18) { console.log("Eres mayor de edad."); }
+              <b>else</b> { console.log("Eres menor de edad."); } <br /><br />
+              <b>// Bucle 'for' para repetir acciones</b>
+              <b>for</b> (var i = 0; i < 5; i++) { console.log("Iteración " +
+              i); }
+            </code>
+          </li>
+          <br />
+          <li>
+            <b>Funciones:</b> Puedes definir funciones para encapsular y
+            reutilizar código.
+            <br />
+            <code>
+              <br />
+              <b>function</b> suma(a, b) { return a + b; }
+              <br />
+              <b>var</b> resultado = suma(5, 3); // Llama a la función 'suma' y
+              obtiene el resultado: 8
+            </code>
+          </li>
+          <br />
+          <li>
+            <b>Eventos:</b> JavaScript se utiliza para manejar eventos en
+            páginas web, como clics de botones y movimientos del mouse.
+            <br />
+            <code>
+              <br />
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <script>
+                    function saludar() {
+                      alert("¡Hola, mundo!");
+                    }
+                  </script>
+                </head>
+                <body>
+                  <button onclick="saludar()">Saludar</button>
+                </body>
+              </html>
+            </code>
+          </li>
+        </ul>
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Herramientas y Recursos</b></h2>
+        <ul>
+          <p><b>Editores de código:</b></p>
+          <li>
+            <b>Visual Studio code (VS code): </b>Un editor de código altamente
+            popular con una gran cantidad de extensiones que facilitan la
+            escritura de código JavaScript y ofrecen herramientas de depuración
+            avanzadas.
+          </li>
+          <br />
+          <li>
+            <b>Sublime Text: </b>Un editor de código ligero y altamente
+            personalizable que es ampliamente utilizado por desarrolladores de
+            JavaScript
+          </li>
+          <br />
+          <p><b>Extensiones para Navegadores:</b></p>
+          <li>
+            <b>React Developer Tools: </b>Una extensión para Chrome y Firefox
+            que facilita la depuración de aplicaciones React.
+          </li>
+          <br />
+          <li>
+            <b>Redux DevTools: </b>Ayuda a depurar aplicaciones que utilizan
+            Redux, una biblioteca para el manejo del estado de la aplicación.
+          </li>
+        </ul>
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Frameworks</b></h2>
+        <p>
+          Un framework es una estructura o conjunto de herramientas y
+          bibliotecas predefinidas que proporciona una base para el desarrollo
+          de software. Estas herramientas y bibliotecas ayudan a los
+          desarrolladores a crear aplicaciones de manera más eficiente y
+          consistente, ya que ofrecen un conjunto de patrones, reglas y
+          prácticas recomendadas para abordar problemas comunes.
+        </p>
+        <img src="../assets/images/diego/frontend-framework-ranking-2.svg" class="img" />
+      </div>
+      <div class="contenido">
+        <p>
+          <b>React: </b>es una de las bibliotecas más populares para la creación
+          de interfaces de usuario interactivas y reactivas. Utiliza un enfoque
+          de "componentes", donde los elementos de la interfaz de usuario se
+          dividen en pequeñas unidades reutilizables llamadas componentes. Esto
+          facilita la construcción y el mantenimiento de aplicaciones complejas.
+          React se utiliza en muchos sitios web y aplicaciones conocidas, y su
+          comunidad es muy activa, lo que lleva a la creación de una amplia
+          variedad de bibliotecas y herramientas complementarias.
+        </p>
+        <img src="../assets/images/diego/React.svg.png" class="img" />
+      </div>
+      <div class="contenido">
+        <p>
+          <b>Angular:</b>es un framework completo para el desarrollo de
+          aplicaciones web. Proporciona una estructura sólida y un conjunto de
+          herramientas para crear aplicaciones de gran envergadura. Angular
+          utiliza TypeScript, un superset de JavaScript que agrega tipado
+          estático, lo que mejora la calidad y la escalabilidad del código.
+          Angular incluye características como enlace de datos bidireccional,
+          inyección de dependencias y una amplia gama de módulos para diversas
+          funcionalidades. Es una elección común para aplicaciones empresariales
+          y complejas.
+        </p>
+        <img
+          src="../assets/images/diego/Angular_full_color_logo.svg.png"
+          class="img"
+        />
+      </div>
+      <div class="contenido">
+        <p>
+          <b>Vue.js: </b>conocido por su simplicidad y flexibilidad. Es un
+          framework progresivo, lo que significa que puedes usarlo de manera
+          incremental en proyectos existentes. Vue.js se centra en la capa de
+          vista de una aplicación y proporciona un sistema de componentes
+          similar al de React. Es fácil de aprender y es una excelente opción
+          para desarrolladores que recién comienzan en el desarrollo front-end.
+          La comunidad de Vue.js ha crecido significativamente en los últimos
+          años, y su enfoque en la simplicidad lo hace popular para proyectos
+          más pequeños y medianos.
+        </p>
+        <img src="../assets/images/diego/Vue.js_Logo_2.svg.png" class="img" />
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Que se espera de JavaScript</b></h2>
+        <ul>
+          <li>
+            <b>Mejoras en el rendimiento: </b>Los motores de JavaScript
+            continúan mejorando, lo que lleva a un mejor rendimiento en el
+            front-end. Los avances en WebAssembly y la optimización de la
+            ejecución de código JavaScript prometen aplicaciones web más rápidas
+            y receptivas.
+          </li>
+          <br />
+          <li>
+            <b>Mayor adopción de TypeScript: </b>ypeScript, que agrega tipado
+            estático a JavaScript, está ganando popularidad rápidamente. Se
+            espera que más proyectos de front-end adopten TypeScript para
+            mejorar la calidad del código y facilitar el mantenimiento.
+          </li>
+          <br />
+          <li>
+            <b>Web Components: </b>Las Web Components son una especificación que
+            permite la creación de componentes personalizables y reutilizables
+            en JavaScript. Se espera que estas tecnologías se vuelvan más
+            populares para la creación de interfaces de usuario.
+          </li>
+          <br />
+          <li>
+            <b>Frameworks y bibliotecas evolucionadas: </b>Frameworks como
+            React, Angular y Vue.js seguirán evolucionando y mejorando. Se
+            espera que se simplifiquen aún más las tareas de desarrollo
+            front-end y se optimice el rendimiento.
+          </li>
+          <br />
+          <li>
+            <b>Optimización de la experiencia del usuario: </b>Con la evolución
+            de las Progressive Web Apps (PWAs), las aplicaciones web se volverán
+            más confiables y ofrecerán experiencias de usuario más fluidas. Esto
+            incluye una mayor disponibilidad sin conexión, tiempos de carga más
+            rápidos y notificaciones push.
+          </li>
+          <br />
+          <li>
+            <b>Inteligencia artificial y machine learning: </b>La integración de
+            tecnologías de IA y ML en aplicaciones web front-end permitirá la
+            creación de experiencias más personalizadas y adaptativas.
+          </li>
+          <br />
+          <li>
+            <b>WebAssembly: </b>A medida que WebAssembly madura, se espera que
+            se utilice en combinación con JavaScript para aplicaciones web de
+            alto rendimiento. Esto abrirá la puerta a una amplia gama de
+            aplicaciones, incluyendo juegos y aplicaciones multimedia complejas.
+          </li>
+          <br />
+          <li>
+            <b>Enfoque en la accesibilidad: </b>Se presta una atención cada vez
+            mayor a la accesibilidad web, lo que se traducirá en la creación de
+            aplicaciones front-end más inclusivas y amigables para personas con
+            discapacidades.
+          </li>
+          <br />
+          <li>
+            <b>Seguridad y privacidad mejoradas: </b>La seguridad y la
+            privacidad en el front-end seguirán siendo una preocupación
+            importante, y se esperan mejoras en las técnicas y herramientas para
+            proteger a los usuarios y los datos.
+          </li>
+          <br />
+          <li>
+            <b>Desarrollo móvil y multiplataforma: </b>El desarrollo
+            multiplataforma seguirá siendo una tendencia con el crecimiento de
+            soluciones como React Native, que permiten crear aplicaciones
+            móviles utilizando JavaScript y React.
+          </li>
+        </ul>
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Seguridad en el Desarrollo Front-End</b></h2>
+        <ul>
+          <li>
+            <b>XSS (Cross-Site Scripting): </b>XSS es una vulnerabilidad común
+            en la que un atacante inyecta código malicioso (generalmente
+            JavaScript) en una página web. Este código puede ejecutarse en el
+            navegador de un usuario, lo que podría resultar en el robo de
+            información sensible o la toma de control de la sesión del usuario.
+            Para prevenir XSS, se deben validar y escapar adecuadamente los
+            datos de entrada y utilizar encabezados de seguridad como Content
+            Security Policy (CSP) para limitar la ejecución de scripts.
+          </li>
+          <br />
+          <li>
+            <b>CSRF (Cross-Site Request Forgery): </b>En un ataque CSRF, un
+            sitio web malicioso puede realizar acciones en otro sitio web en
+            nombre de un usuario autenticado sin su consentimiento. Para
+            prevenir CSRF, se deben utilizar tokens CSRF y asegurarse de que las
+            acciones críticas, como las solicitudes de cambio de estado,
+            requieran confirmación explícita del usuario.
+          </li>
+          <br />
+          <li>
+            <b>Manejo Seguro de Cookies y Sesiones: </b>Las cookies y las
+            sesiones son vulnerables a ataques si no se manejan correctamente.
+            Es importante utilizar cookies seguras y configurar encabezados de
+            seguridad adecuados para proteger las sesiones del usuario.
+          </li>
+        </ul>
+      </div>
+      <img src="../assets/images/diego/seguridad.png" class="img" />
+      <div class="contenido">
+        <h2 class="title"><b>Ventajas de JavaScript en el Front-End</b></h2>
+        <ul>
+          <li>
+            <b>Ubicuidad: </b>avaScript es el lenguaje de programación principal
+            para el desarrollo web en el navegador, lo que significa que es
+            ampliamente compatible en todos los navegadores.
+          </li>
+          <br />
+          <li>
+            <b>Interactividad: </b>JavaScript permite crear experiencias de
+            usuario altamente interactivas y dinámicas en sitios web.
+          </li>
+          <br />
+          <li>
+            <b>Rápido desarrollo: </b>Con la popularización de bibliotecas y
+            frameworks como React, Angular y Vue.js, el desarrollo front-end se
+            ha vuelto más eficiente y rápido.
+          </li>
+          <br />
+          <li>
+            <b>Gran comunidad: </b>Existe una comunidad activa de
+            desarrolladores, lo que facilita el aprendizaje y la resolución de
+            problemas.
+          </li>
+        </ul>
+        <img src="../assets/images/diego/si.png" class="img" />
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Desventajas de JavaScript en el Front-End</b></h2>
+        <ul>
+          <li>
+            <b>Seguridad: </b>Al ser un lenguaje en el lado del cliente, la
+            seguridad es un problema importante, ya que el código fuente es
+            visible para todos.
+          </li>
+          <br />
+          <li>
+            <b>Dificultad de prueba: </b>El front-end a menudo presenta desafíos
+            en la escritura de pruebas automatizadas eficaces.
+          </li>
+          <br />
+          <li>
+            <b>Compatibilidad con navegadores: </b>La compatibilidad entre
+            navegadores puede ser un problema, ya que diferentes navegadores
+            pueden interpretar el código de manera ligeramente diferente.
+          </li>
+        </ul>
+        <img src="../assets/images/diego/noo.jpg" class="img" />
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Comunidad de JavaScript</b></h2>
+        <p>
+          La comunidad de Front-End de JavaScript se centra en el desarrollo de
+          interfaces de usuario y aplicaciones web que los usuarios finales
+          interactúan directamente. Algunas características específicas de esta
+          comunidad incluyen:
+        </p>
+        <ul>
+          <li>
+            <b>Desarrollo web centrado en el usuario: </b>Los desarrolladores
+            front-end se preocupan por la experiencia del usuario, la interfaz
+            de usuario y la interacción con los sitios web y aplicaciones. Se
+            dedican a crear interfaces atractivas y funcionales.
+          </li>
+          <br />
+          <li>
+            <b>Frameworks y bibliotecas de UI: </b>Esta comunidad ha impulsado
+            el desarrollo de numerosos frameworks y bibliotecas como React,
+            Angular, y Vue.js. Estas herramientas son fundamentales en la
+            creación de aplicaciones web modernas.
+          </li>
+          <br />
+          <li>
+            <b>Diseño y UX/UI: </b>Los desarrolladores front-end a menudo
+            trabajan en estrecha colaboración con diseñadores y se preocupan por
+            la usabilidad, la accesibilidad y la estética de las aplicaciones.
+          </li>
+          <br />
+          <li>
+            <b>Desarrollo en el navegador: </b>Gran parte del trabajo front-end
+            se realiza en el navegador, utilizando HTML, CSS y JavaScript para
+            crear interfaces interactivas.
+          </li>
+        </ul>
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Comparación con otros lenguajes</b></h2>
+        <ul>
+          <li>
+            <b>Java: </b>Java es más conocido por su uso en el lado del servidor
+            y en aplicaciones empresariales. JavaScript es más flexible y se usa
+            tanto en el front-end como en el back-end.
+          </li>
+          <br />
+          <li>
+            <b>Python: </b>Python es valorado por su simplicidad y facilidad de
+            aprendizaje, mientras que JavaScript es más versátil y se utiliza en
+            el desarrollo web.
+          </li>
+          <br />
+          <li>
+            <b>Ruby: </b>Ruby es conocido por su elegancia y el uso en el
+            desarrollo web con el framework Ruby on Rails, mientras que
+            JavaScript es más ampliamente utilizado y versátil.
+          </li>
+        </ul>
+        <p>
+          JavaScript es un lenguaje versátil que puede ser utilizado tanto en el
+          front-end como en el back-end. Sus ventajas incluyen su ubicuidad y
+          una comunidad activa. Sin embargo, es importante considerar la
+          seguridad y la compatibilidad en diferentes navegadores en el
+          front-end y abordar problemas de concurrencia en el back-end. La
+          elección entre JavaScript y otros lenguajes depende de las necesidades
+          específicas de tu proyecto y tus preferencias personales.
+        </p>
+      </div>
+      <div class="contenido">
+        <h2 class="title"><b>Consejos para Aprender JavaScript</b></h2>
+        <ul>
+          <li>
+            <b>Practicar Constantemente: </b>La práctica regular es esencial
+            para mejorar tus habilidades en JavaScript. Escribe código todos los
+            días y resuelve desafíos de programación en sitios como LeetCode o
+            CodeSignal.
+          </li>
+          <br />
+          <li>
+            <b>Contribuir a Proyectos de Código Abierto: </b>Colaborar en
+            proyectos de código abierto te permite trabajar en aplicaciones
+            reales y aprender de otros desarrolladores experimentados.
+          </li>
+          <br />
+          <li>
+            <b>Explorar Documentación y Tutoriales: </b>La documentación oficial
+            de JavaScript y tutoriales en línea, como los de MDN Web Docs y
+            freeCodeCamp, son recursos valiosos para aprender.
+          </li>
+          <br />
+          <li>
+            <b><a href="https://www.youtube.com/watch?v=odnLWsAe3lM" target="_blank">JavaScript en 5 minutos</a></b>
+          </li>
+          <br />
+          <li>
+            <b><a href="https://www.youtube.com/watch?v=z95mZVUcJ-E&t=7573s" target="_blank">JavaScript desde 0</a></b>
+          </li>
+          <br />
+          <li>
+            <b>Participar en Comunidades de Desarrolladores: </b>Únete a foros
+            en línea, grupos de discusión y redes sociales donde puedas hacer
+            preguntas, compartir tus conocimientos y aprender de otros
+            desarrolladores.
+          </li>
+          <br />
+          <li>
+            <b>Seguir las Mejores Prácticas: </b>Aprende las mejores prácticas
+            de codificación, como el uso de nombres de variables descriptivos,
+            la organización del código en funciones y la gestión de dependencias
+            de manera eficiente.
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="../indexnico.html">
+              <img src="../assets/images/diego/logocode.png" alt="Logo de CodeStart"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p class="pfoo">
+            En nuestra página, te guiamos en tu viaje para adentrarte en el
+            apasionante mundo de la programación.
+          </p>
+          <p class="pfoo">
+            Descubre recursos valiosos y consejos útiles para comenzar tu
+            trayecto como desarrollador. ¡Te acompañamos en cada paso del
+            camino!
+          </p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"></a>
+            <a href="https://www.youtube.com" class="fa fa-youtube" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy; 2023 <b>CodeStart</b> - Todos los Derechos Reservados.</small>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  </body>
+</html>
